@@ -1,5 +1,4 @@
-#include "screen.h"
-
+#include <screen.h>
 const size_t scr_width = 80;
 const size_t scr_height = 25;
 unsigned short* screen = (unsigned short*)0xB8000;
@@ -9,6 +8,11 @@ static size_t color = 0x2F;
 void set_color(uint8_t background, uint8_t foreround)
 {
 	color = background<<4|foreround;
+}
+
+size_t get_color()
+{
+	return color;
 }
 
 void clear_screen()
@@ -42,4 +46,28 @@ void scroll_down()
 		}
 	}
 	clear_row(scr_height-1);
+}
+
+void monitor_write(const char c)
+{
+	if(c=='\n')
+	{
+		scr_ptr = (scr_ptr-scr_ptr%scr_width)+(scr_ptr%scr_width==0?0:scr_width);
+	}
+	else{
+		screen[scr_ptr++] = (get_color())<<8 | c;
+	}
+	if(scr_ptr>=scr_width*scr_height){
+		scr_ptr -= scr_width;
+		scroll_down();
+	}
+}
+
+unsigned short* get_screen_ptr()
+{
+	return screen;
+}
+size_t* screen_cursor_ptr()
+{
+	return &scr_ptr;
 }
