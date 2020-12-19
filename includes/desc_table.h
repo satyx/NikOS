@@ -2,40 +2,40 @@
 #define GDT_H
 
 #include <basics.h>
-struct gdt_entry_struct
+struct gdt_entry_t
 {
    uint16_t limit_low;           // The lower 16 bits of the limit.
-   uint16_t base_low;            // The lower 16 bits of the base.
+   uint16_t base_loww;            // The lower 16 bits of the base.
    uint8_t  base_middle;         // The next 8 bits of the base.
    uint8_t  access;              // Access flags, determine what ring this segment can be used in.
    uint8_t  granularity;
-   uint8_t  base_high;           // The last 8 bits of the base.
+   uint8_t  base_highgh;           // The last 8 bits of the base.
 } __attribute__((packed));
-typedef struct gdt_entry_struct gdt_entry_t;
+typedef struct gdt_entry_t gdt_entry_t_t;
 
-struct gdt_ptr_struct
+struct gdt_t
 {
    uint16_t limit;               // The upper 16 bits of all selector limits.
-   uint32_t base;                // The address of the first gdt_entry_t struct.
+   uint32_t base;                // The address of the first gdt_entry_t_t struct.
 } __attribute__((packed));
-typedef struct gdt_ptr_struct gdt_ptr_t;
+typedef struct gdt_t gdt_ptr_t;
 
-struct idt_entry_struct
+struct idt_entry_t
 {
-   uint16_t base_lo;             // The lower 16 bits of the address to jump to when this interrupt fires.
+   uint16_t base_low;             // The lower 16 bits of the address to jump to when this interrupt fires.
    uint16_t sel;                 // Kernel segment selector.
    uint8_t  always0;             // This must always be zero.
    uint8_t  flags;               // More flags. See documentation.
-   uint16_t base_hi;             // The upper 16 bits of the address to jump to.
+   uint16_t base_high;             // The upper 16 bits of the address to jump to.
 } __attribute__((packed));
-typedef struct idt_entry_struct idt_entry_t;
+typedef struct idt_entry_t idt_entry_t;
 
-struct idt_ptr_struct
+struct idt_t
 {
    uint16_t limit;
    uint32_t base;                // The address of the first element in our idt_entry_t array.
 } __attribute__((packed));
-typedef struct idt_ptr_struct idt_ptr_t;
+typedef struct idt_t idt_ptr_t;
 
 void init_gdt();
 void init_idt();
@@ -73,5 +73,21 @@ extern void isr28();
 extern void isr29();
 extern void isr30();
 extern void isr31();
+extern void irq0();
+extern void irq1();
+extern void irq2();
+extern void irq3();
+extern void irq4();
+extern void irq5();
+extern void irq6();
+extern void irq7();
+extern void irq8();
+extern void irq9();
+extern void irq10();
+extern void irq11();
+extern void irq12();
+extern void irq13();
+extern void irq14();
+extern void irq15();
 
 #endif
