@@ -52,7 +52,24 @@ void monitor_write(const char c)
 {
 	if(c=='\n')
 	{
-		scr_ptr = (scr_ptr-scr_ptr%scr_width)+(scr_ptr%scr_width==0?0:scr_width);
+		scr_ptr = (scr_ptr-scr_ptr%scr_width)+scr_width;
+	}
+	else if(c=='\t')
+	{
+		int tab_count = 4;
+		while(tab_count>0){
+			monitor_write(' ');
+			tab_count--;
+		}
+	}
+	else if(c=='\b')
+	{
+		if(scr_ptr>0)
+		{
+			scr_ptr--;
+			monitor_write(' ');
+			scr_ptr--;
+		}
 	}
 	else{
 		screen[scr_ptr++] = (get_color())<<8 | c;

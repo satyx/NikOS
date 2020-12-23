@@ -5,7 +5,7 @@
 
 #define SCR_WIDTH 80
 #define SCR_HEIGHT 25
-
+#define TAB_LENGTH 4
 void set_color(uint8_t, uint8_t);
 size_t get_color();
 void clear_screen();
