@@ -1,8 +1,8 @@
 # NikOS
 ## In the beloved memory of my Friend Late Nikhil Sharma (16th September 1999 ~ 10th October 2014)
 
-Back in 2012 when we were in 8th standard, discussing about our dreams, among the voices of Chocolate Fountains or getting dream bike, there was a voice "Developing my own Operating System one day"... 
-<br><br>Operating System is almost an integral part of any Computer Science or related Discipline's curriculum. Though it is quite rare to find courses that actually gives a hands on experience of developing an OS as a part of undergraduate curriculum. Not only it makes you appreciate the beauty of one of the most magnificent piece of engineering, one can trace the evolution of modern computers down the line.
+Back in 2012 when we were in 8th standard, discussing about our dreams, among the voices of Chocolate Fountains or getting dream bike, there was a voice "Developing my own Operating System one day", that was my friend Nikhil. ... 
+<br><br>Operating System is almost an integral part of any Computer Science or related Discipline's curriculum. Though it is quite rare to find courses that actually gives a hands on experience of developing an OS as a part of undergraduate curriculum. Not only it makes one appreciate the beauty of one of the most magnificent piece of engineering, evolution of modern computers can easily be traced down the line.
 <br><br>This is one of my dream project and is solely developed for educational purpose. I am forever indebted to the OSDev community for providing a great platform of absolute gem, Viktor Engelmann for his sincere and consistent efforts in delivering Video Tutorials (wyoos.org), Mr James Molly for providing tutorials for even absolute beginners with beautiful short descriptions of the literature along side the code, BrokenThorn Entertainment for OS Development Series, Mr. Ciro Santilli for guiding me during the development and ofcourse the Linux Community for being always a goto place whenever stuck.
 
 Pre-Requisites:
